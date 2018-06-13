@@ -1,6 +1,6 @@
 package com.mtoliv.mapper.dao;
 
-import com.mtoliv.entity.Account;
+import com.mtoliv.entity.UserInfo;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @author Aaron
  * @since 2018-06-13
  */
-public interface AccountMapper extends BaseMapper<Account> {
+public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
 }

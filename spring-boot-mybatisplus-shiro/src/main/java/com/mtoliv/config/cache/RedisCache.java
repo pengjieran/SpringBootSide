@@ -4,8 +4,6 @@ import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 
 import org.apache.ibatis.cache.Cache;
-import org.mybatis.caches.redis.RedisCallback;
-import org.mybatis.caches.redis.SerializeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import redis.clients.jedis.Jedis;
@@ -103,7 +101,6 @@ public class RedisCache implements Cache {
 				return id;
 			}
 		});
-
 	}
 
 	@Override
