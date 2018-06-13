@@ -1,11 +1,11 @@
 package com.mtoliv.mapper.dao;
 
-import com.mtoliv.entity.Account;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.mtoliv.entity.Account;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author Aaron
