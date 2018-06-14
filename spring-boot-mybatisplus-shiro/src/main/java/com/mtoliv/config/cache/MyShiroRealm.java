@@ -43,7 +43,7 @@ public class MyShiroRealm extends AuthorizingRealm {
 	        return null;
 	    }
 	    
-	    return new SimpleAuthenticationInfo(userInfo, userInfo.getPassword(), getName());
+	    return new SimpleAuthenticationInfo(userInfo.getUsername(), userInfo.getPassword(), getName());
 	}
 
 }
