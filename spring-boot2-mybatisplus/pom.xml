@@ -30,6 +30,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- 因为springfox的原因，暂时无法使用webflux -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
