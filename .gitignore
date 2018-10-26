@@ -13,3 +13,8 @@ buildNumber.properties
 /.metadata/
 /.sonarlint/
 /RemoteSystemsTempFiles/
+*/.settings/
+*.project
+*.gitignore
+*.factorypath
+*.classpath

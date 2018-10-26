@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ambow.mapper.dao.StreamRoomMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ambow.entity.StreamRoom">
+        <id column="id" property="id" />
+        <result column="resource_id" property="resourceId" />
+        <result column="name" property="name" />
+        <result column="code" property="code" />
+        <result column="templatetype" property="templatetype" />
+        <result column="publisherpass" property="publisherpass" />
+        <result column="assistantpass" property="assistantpass" />
+        <result column="playpass" property="playpass" />
+        <result column="stream_url" property="streamUrl" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,18 @@
+server:
+  http2:
+    enabled: true
+  port: 8080
+  
+
+mybatis-plus: 
+  mapper-locations: classpath*:/com/ambow/mapper/xml/**Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.ambow.entity
+  global-config: 
+    db-config:
+      id-type: id-worker-str
+               #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: not-empty
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
