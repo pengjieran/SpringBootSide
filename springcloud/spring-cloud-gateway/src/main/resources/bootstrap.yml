@@ -6,7 +6,7 @@ spring:
     name: gateway  cloud:    gateway:
       routes:      - id: sps  
         uri: lb://user
-        predicates:        - Path=/sps/user/**  #转发该链接的请求到user
+        predicates:        - Path=/sps/user/**  #转发该链接的请求到服务名为user的服务
         filters:        - StripPrefix=2       #转发的请求忽略前面两个前缀
       metrics:        enabled: true      enabled: true
       discovery:        locator:          enabled: true               #是否开启按照服务名路由          lower-case-service-id: true #默认路由规则是服务名大写，true表示使用服务名小写规则路由
