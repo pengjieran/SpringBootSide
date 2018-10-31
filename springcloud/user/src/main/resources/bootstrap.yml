@@ -9,6 +9,15 @@ server:
   port: 8001
   connection-timeout: 60000
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+      health:
+        show-details: ALWAYS
+
 eureka: 
   instance:
     preferIpAddress: true
