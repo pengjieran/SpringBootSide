@@ -73,6 +73,7 @@
 				<executions>
 					<execution>
 						<goals>
+							<!-- admin里面显示版本等信息 -->
 							<goal>build-info</goal>
 						</goals>
 					</execution>
