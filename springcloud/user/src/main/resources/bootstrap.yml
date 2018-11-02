@@ -1,4 +1,5 @@
 spring:
+  profiles:    active:    - native
   mvc:
     servlet:
       load-on-startup: 0
@@ -28,3 +29,24 @@ eureka:
     registry-fetch-interval-seconds: 5 #表示eureka client间隔多久去拉取服务注册信息，默认为30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
     serviceUrl: 
      defaultZone: http://localhost:8761/eureka/
+     
+---
+spring: 
+  profiles: native
+  cloud:
+    config: 
+      enabled: false
+      fail-fast: true
+      discovery:
+        enabled: false
+        service-id: config.server
+---
+spring: 
+  profiles: test,online
+  cloud:
+    config: 
+      enabled: true
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config.server

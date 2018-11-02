@@ -11,8 +11,8 @@ spring:
         git:          clone-on-start: true
           uri: https://github.com/pengjieran/config.git
           default-label: master
-          username: 123456
-          password: 123456
+          username: 123456  # 用户名
+          password: 123456  # 密码
           basedir:
             /data/repo
           
