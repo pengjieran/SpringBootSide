@@ -10,6 +10,10 @@ server:
   port: 8001
   connection-timeout: 60000
 
+# 启用feign的服务降级
+feign:
+  hystrix:    enabled: true
+
 management:
   endpoints:
     web:

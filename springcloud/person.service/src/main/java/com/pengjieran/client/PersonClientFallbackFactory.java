@@ -1,4 +1,4 @@
-package com.pengjieran.client;
+/*package com.pengjieran.client;
 
 import org.springframework.stereotype.Component;
 
@@ -13,4 +13,4 @@ public class PersonClientFallbackFactory implements FallbackFactory<PersonClient
 		return new PersonClientFallback(cause);
 	}
 
-}
+}*/

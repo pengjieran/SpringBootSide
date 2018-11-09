@@ -9,6 +9,8 @@ public class User implements Serializable {
     private String username;
     
     private String password;
+    
+    private Person person;
 
     public String getUsername() {
         return username;
@@ -25,5 +27,13 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
     
 }
