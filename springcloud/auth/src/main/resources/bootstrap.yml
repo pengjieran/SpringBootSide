@@ -3,10 +3,10 @@ spring:
     servlet:
       load-on-startup: 0
   application:
-    name: spring-cloud-eureka-server
+    name: auth
  
 info: 
-  app.name: spring-cloud-eureka-server
+  app.name: auth
   company.name: mtoliv
   build.version: #project.build.version#
 
