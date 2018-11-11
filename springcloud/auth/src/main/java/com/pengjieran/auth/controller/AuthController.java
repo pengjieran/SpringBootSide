@@ -1,5 +1,6 @@
 package com.pengjieran.auth.controller;
 
+import com.pengjieran.auth.model.LoginBody;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
