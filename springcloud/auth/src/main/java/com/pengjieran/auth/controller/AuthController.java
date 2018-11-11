@@ -1,5 +1,6 @@
 package com.pengjieran.auth.controller;
 
+import com.pengjieran.auth.model.AuthBody;
 import com.pengjieran.auth.model.LoginBody;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,8 @@ public class AuthController {
 
 
     @PostMapping(value = "/login")
-    public boolean login(@RequestBody LoginBody loginBody) {
+    public AuthBody login(@RequestBody LoginBody loginBody) {
 
-        return true;
+        return new AuthBody();
     }
 }
