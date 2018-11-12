@@ -13,10 +13,25 @@ import com.pengjieran.auth.model.LoginBody;
 @RequestMapping(value = "/*/api/v1", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class AuthController {
 
-
+	/**
+	 * 登录
+	 * @param loginBody
+	 * @return
+	 */
     @PostMapping(value = "/login")
     public AuthBody login(@RequestBody LoginBody loginBody) {
 
         return new AuthBody();
+    }
+    
+    /**
+     * 注册
+     * @param loginBody
+     * @return
+     */
+    @PostMapping(value = "/signup")
+    public AuthBody signup(@RequestBody LoginBody loginBody) {
+    	
+    	return new AuthBody();
     }
 }
