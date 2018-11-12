@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class LoginBody implements Serializable {
 
-    private String username;
+	private static final long serialVersionUID = 6468993417869304032L;
+
+	private String username;
 
     private String password;
 

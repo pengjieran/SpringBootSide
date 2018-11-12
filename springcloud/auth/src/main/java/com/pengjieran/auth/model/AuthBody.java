@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class AuthBody implements Serializable {
 
-    private String type;
+	private static final long serialVersionUID = 412669827660442100L;
+
+	private String type;
 
     private String body;
 
