@@ -4,7 +4,22 @@ spring:
       load-on-startup: 0
   application:
     name: gateway  cloud:    gateway:
-      routes:      - id: sps  
+      routes:
+      - id: login
+        uri: lb://auth
+        predicates:
+        - Path=/*/api/v1/login  #转发该链接的请求到服务名为user的服务
+        order: 1
+        filters:
+        - StripPrefix=1
+      - id: signup
+        uri: lb://auth
+        predicates:
+        - Path=/*/api/v1/signup  #转发该链接的请求到服务名为user的服务
+        order: 2
+        filters:
+        - StripPrefix=1      - id: sps
+        order: 3
         uri: lb://user
         predicates:        - Path=/sps/user/**  #转发该链接的请求到服务名为user的服务
         filters:        - StripPrefix=2       #转发的请求忽略前面两个前缀

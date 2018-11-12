@@ -10,7 +10,7 @@ import com.pengjieran.auth.model.AuthBody;
 import com.pengjieran.auth.model.LoginBody;
 
 @RestController
-@RequestMapping(value = "/*/api/v1", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "/api/v1", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class AuthController {
 
 	/**
@@ -18,7 +18,7 @@ public class AuthController {
 	 * @param loginBody
 	 * @return
 	 */
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public AuthBody login(@RequestBody LoginBody loginBody) {
 
         return new AuthBody();
@@ -29,7 +29,7 @@ public class AuthController {
      * @param loginBody
      * @return
      */
-    @PostMapping(value = "/signup")
+    @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public AuthBody signup(@RequestBody LoginBody loginBody) {
     	
     	return new AuthBody();
