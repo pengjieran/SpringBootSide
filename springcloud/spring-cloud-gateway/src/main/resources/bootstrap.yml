@@ -9,7 +9,7 @@ spring:
         uri: lb://auth
         predicates:
         - Path=/*/api/v1/login  #转发该链接的请求到服务名为user的服务
-        order: 1
+        order: -100
         filters:
         - StripPrefix=1
       - id: signup
