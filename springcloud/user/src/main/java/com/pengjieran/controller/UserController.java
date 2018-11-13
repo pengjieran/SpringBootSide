@@ -1,6 +1,9 @@
 package com.pengjieran.controller;
 
+import java.io.Serializable;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,9 @@ public class UserController {
 	@Autowired
 	private PersonClient personClient;
 	
+	@Autowired
+	private RedisTemplate<String, Serializable> redisTemplate;
+	
     @GetMapping
     public User put() {
         
@@ -26,6 +32,7 @@ public class UserController {
         
         Person person = personClient.get("123456");
         user.setPerson(person);
+        redisTemplate.opsForValue().set("1", user);
         return user;
     }
 }
