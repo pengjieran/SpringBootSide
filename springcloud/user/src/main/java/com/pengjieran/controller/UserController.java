@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.examplecn.model.Person;
 import com.examplecn.model.User;
 import com.examplecn.model.User.UserBuilder;
 import com.pengjieran.client.PersonClient;
-import com.pengjieran.model.Person;
 
 @RestController
 @RequestMapping(value = "/api/v1/users", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -31,8 +31,8 @@ public class UserController {
         userBuilder.username("12345").password("123456");
         
         Person person = personClient.get("123456");
-        user.setPerson(person);
-        redisTemplate.opsForValue().set("1", user);
-        return user;
+        userBuilder.person(person);
+        redisTemplate.opsForValue().set("1", userBuilder.build());
+        return userBuilder.build();
     }
 }
