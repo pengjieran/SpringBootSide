@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.examplecn.model.User;
+import com.examplecn.model.User.UserBuilder;
 import com.pengjieran.client.PersonClient;
 import com.pengjieran.model.Person;
-import com.pengjieran.model.User;
 
 @RestController
 @RequestMapping(value = "/api/v1/users", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -26,7 +27,7 @@ public class UserController {
     @GetMapping
     public User put() {
         
-        User user = new User();
+        UserBuilder userBuilder = User.builder();
         user.setUsername("username");
         user.setPassword("123456");
         
