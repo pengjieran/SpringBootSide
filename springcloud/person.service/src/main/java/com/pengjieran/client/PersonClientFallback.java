@@ -1,6 +1,6 @@
 package com.pengjieran.client;
 
-import com.pengjieran.model.Person;
+import com.examplecn.model.Person;
 
 public class PersonClientFallback implements PersonClient {
 
@@ -21,6 +21,6 @@ public class PersonClientFallback implements PersonClient {
 	@Override
 	public Person get(String id) {
 		
-		return new Person();
+		return Person.builder().build();
 	}
 }

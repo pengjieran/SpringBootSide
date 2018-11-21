@@ -26,10 +26,9 @@ public class UserController {
 	
     @GetMapping
     public User put() {
-        
+    	
         UserBuilder userBuilder = User.builder();
-        user.setUsername("username");
-        user.setPassword("123456");
+        userBuilder.username("12345").password("123456");
         
         Person person = personClient.get("123456");
         user.setPerson(person);
