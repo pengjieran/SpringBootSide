@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    hikari:
+      auto-commit: true
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: root
+      password: 123456
+  activiti:
+    database-schema-update: true
+    check-process-definitions: false
+
+swagger:
+  enable: true
