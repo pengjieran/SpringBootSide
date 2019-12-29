@@ -9,3 +9,6 @@ Spring-boot与mybatis-plus整合的脚手架，数据源用的是druid,没有添
 用户授权采用springsecurity实现
 ## springcloud
 基于springcloud套件搭建的脚手架，包含网关，服务注册中心，熔断等
+## demo
+包含用户，账号等完整功能的单体应用，认证体系参考
+https://gitee.com/magintursh/tyboot
