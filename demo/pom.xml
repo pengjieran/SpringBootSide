@@ -16,6 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <mybatis-plus-starter.version>3.3.0</mybatis-plus-starter.version>
+        <springfox.version>2.9.2</springfox.version>
+        <hutool.version>5.1.0</hutool.version>
     </properties>
 
     <dependencies>
@@ -40,17 +43,17 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.0</version>
+            <version>${mybatis-plus-starter.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -65,7 +68,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.1.0</version>
+            <version>${hutool.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,7 +86,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -106,5 +109,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
