@@ -5,7 +5,10 @@ spring:
     password: 123456
     hikari:
       auto-commit: false
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
 mybatis-plus:
   global-config:
     banner: false
-
