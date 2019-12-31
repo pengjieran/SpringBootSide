@@ -7,5 +7,5 @@ import com.examplecn.demo.model.UserModel;
 
 public interface UserService extends IService<User> {
 
-    public ResponseModel create(UserModel userModel);
+    public ResponseModel create(UserModel userModel) throws Exception;
 }

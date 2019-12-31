@@ -1,31 +1,37 @@
 package com.examplecn.demo.model;
 
 import lombok.Data;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 
 @Data
 public class ResponseModel implements Serializable {
 
-    private String code;
+    private int status;
 
-    private String message;
+    private Object result;
 
-    private Object data;
+    private String traceId;
 
-    public ResponseModel() {}
+    private String devMessage = "";
 
-    public ResponseModel(String code, String message) {
-        this.code = code;
-        this.message = message;
-    }
+    private String message = "";
 
-    public static ResponseModel success(Object data) {
+    private String path;
 
-        ResponseModel responseModel = new ResponseModel();
-        responseModel.setCode("200");
-        responseModel.setMessage("操作成功");
-        responseModel.setData(data);
-        return responseModel;
+    public static ResponseModel succeed(Object data) {
+
+        ResponseModel response = new ResponseModel();
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        response.setResult(data);
+        response.setDevMessage("SUCCESS");
+        response.setStatus(HttpStatus.OK.value());
+        response.setTraceId(RequestContext.getTraceId());
+        response.setPath(request.getServletPath());
+        return response;
     }
 }

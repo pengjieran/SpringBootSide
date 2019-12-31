@@ -18,7 +18,7 @@ public class AccountController {
     private UserService userService;
 
     @PostMapping
-    public ResponseModel register(@RequestBody UserModel userModel) {
+    public ResponseModel register(@RequestBody UserModel userModel) throws Exception {
 
         return userService.create(userModel);
     }

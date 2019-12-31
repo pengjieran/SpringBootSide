@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.examplecn.demo.entity.Account;
 import com.examplecn.demo.entity.User;
+import com.examplecn.demo.exception.BaseException;
 import com.examplecn.demo.mapper.AccountMapper;
 import com.examplecn.demo.mapper.UserMapper;
 import com.examplecn.demo.model.ResponseModel;
@@ -22,11 +23,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Transactional
     @Override
-    public ResponseModel create(UserModel userModel) {
+    public ResponseModel create(UserModel userModel) throws Exception {
 
         QueryChainWrapper<Account> accountQueryChainWrapper = new QueryChainWrapper<>(accountMapper);
         Account account = accountQueryChainWrapper.eq(Account.USERNAME, userModel.getUsername()).one();
-        if (null != account) return new ResponseModel("5000", "账号已存在！");
+        if (null != account) throw new BaseException("账号已存在","500","账号已存在");
         account = new Account();
         account.setUsername(userModel.getUsername());
         account.setPassword(SecureUtil.sha256(userModel.getPassword()));
@@ -35,6 +36,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         save(user);
         account.setUserId(user.getId());
         accountMapper.insert(account);
-        return ResponseModel.success(account);
+        return ResponseModel.succeed(account);
     }
 }

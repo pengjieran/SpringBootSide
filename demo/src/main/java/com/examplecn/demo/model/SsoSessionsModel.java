@@ -1,15 +1,4 @@
-/**
- * All rights Reserved, Designed By www.baiwang.com
- *
- * @author: 云平台技术部
- * @date: 2019/12/30 19:22
- * @version v2.0
- * @Copyright: 2019 www.baiwang.com Inc. All rights reserved. 注意：本内容仅限于百望股份有限公司内部传阅，禁止外泄以及用于其他的商业目
- */
 package com.examplecn.demo.model;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
@@ -18,8 +7,6 @@ import java.util.Date;
  * @author: Administrator
  * @date: 2019/12/30 19:22
  */
-@EqualsAndHashCode
-@Data
 public class SsoSessionsModel {
 
     private static final long serialVersionUID = 4645613132132132L;
@@ -35,7 +22,7 @@ public class SsoSessionsModel {
     /**
      * 用户编号
      */
-    private String userId;
+    private Long userId;
     /**
      * 用户名
      */
@@ -78,4 +65,116 @@ public class SsoSessionsModel {
 
 
     private String token;
+
+    public String getAgencyCode() {
+        return agencyCode;
+    }
+
+    public void setAgencyCode(String agencyCode) {
+        this.agencyCode = agencyCode;
+    }
+
+    public String getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getActionByProduct() {
+        return actionByProduct;
+    }
+
+    public void setActionByProduct(String actionByProduct) {
+        this.actionByProduct = actionByProduct;
+    }
+
+    public String getActionByIp() {
+        return actionByIp;
+    }
+
+    public void setActionByIp(String actionByIp) {
+        this.actionByIp = actionByIp;
+    }
+
+    public Long getSessionExpiration() {
+        return sessionExpiration;
+    }
+
+    public void setSessionExpiration(Long sessionExpiration) {
+        this.sessionExpiration = sessionExpiration;
+    }
+
+    public String getSessionStatus() {
+        return sessionStatus;
+    }
+
+    public void setSessionStatus(String sessionStatus) {
+        this.sessionStatus = sessionStatus;
+    }
+
+    public Date getSessionCreateTime() {
+        return sessionCreateTime;
+    }
+
+    public void setSessionCreateTime(Date sessionCreateTime) {
+        this.sessionCreateTime = sessionCreateTime;
+    }
+
+    public String getActionByAgent() {
+        return actionByAgent;
+    }
+
+    public void setActionByAgent(String actionByAgent) {
+        this.actionByAgent = actionByAgent;
+    }
+
+    public String getSourceDeviceCode() {
+        return sourceDeviceCode;
+    }
+
+    public void setSourceDeviceCode(String sourceDeviceCode) {
+        this.sourceDeviceCode = sourceDeviceCode;
+    }
+
+    public String getSourceOs() {
+        return sourceOs;
+    }
+
+    public void setSourceOs(String sourceOs) {
+        this.sourceOs = sourceOs;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 }
