@@ -42,10 +42,10 @@ public class LoginAuthenticator {
 
     @Transactional(rollbackFor = {Exception.class, BaseException.class})
     public SsoSessionsModel createSession(IdType idType, ProvidedAuthType authType, UserType userType, AuthModel authModel) throws Exception {
+
         String product = RequestContext.getProduct();
         String requestIP = RequestContext.getRequestIP();
         String userAgent = RequestContext.getUserAgent();
-
 
         if (Objects.isNull(product)
                 || Objects.isNull(requestIP)
@@ -63,25 +63,26 @@ public class LoginAuthenticator {
         ssoSessionsModel.setUserType(userType.name());
         ssoSessionsModel.setToken(RandomUtil.randomString(25));
         if (UserType.ANONYMOUS.equals(userType)) {
+
             ssoSessionsModel.setAgencyCode(PropertyValueConstants.CODE_SUPER_ADMIN);
             ssoSessionsModel.setLoginId("admin");
             ssoSessionsModel.setUserId(ssoSessionsModel.getUserId());
             ssoSessionsModel.setUserName(userType.getLabel());
         } else {
+
             Account loginInfoModel = getAuthenticator(authType).doAuthenticate(idType, userType, authModel);
             //ssoSessionsModel.setAgencyCode(loginInfoModel.getAgencyCode());
             ssoSessionsModel.setLoginId(loginInfoModel.getUsername());
             ssoSessionsModel.setUserId(loginInfoModel.getUserId());
             ssoSessionsModel.setUserType(userType.name());
-
         }
 
         //保存session和登陆记录
         return createLoginHistory(ssoSessionsModel);
     }
 
-
     public HashMap<String, Object> authLogin(IdType idType, ProvidedAuthType authType, UserType userType, AuthModel authModel) throws Exception {
+
         SsoSessionsModel ssoSessionsModel = this.createSession(idType, authType, userType, authModel);
         HashMap<String, Object> result = new HashMap<String, Object>();
         result.put(PropertyValueConstants.TOKEN, ssoSessionsModel.getToken());
@@ -89,7 +90,6 @@ public class LoginAuthenticator {
         result.put(PropertyValueConstants.USERID, ssoSessionsModel.getUserId());
         return result;
     }
-
 
     private SsoSessionsModel createLoginHistory(SsoSessionsModel ssoSessionsModel) throws Exception {
 
@@ -100,6 +100,6 @@ public class LoginAuthenticator {
         //清理旧的session
         sessionService.removeSession(ssoSessionsModel.getActionByProduct(), ssoSessionsModel.getLoginId());
 
-        return sessionService.createSession(ssoSessionsModel);
+        return ssoSessionsModel;
     }
 }

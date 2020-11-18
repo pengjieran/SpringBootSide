@@ -83,10 +83,8 @@ public class SSOSessionService {
         redisTemplate.expire(sessionCacheKeyWithToken(sessionsModel.getToken(), sessionsModel.getActionByProduct()), DEFAULT_SESSION_EXPIRATION, TimeUnit.SECONDS);
         redisTemplate.expire(sessionCacheKeyWithLoginId(sessionsModel.getLoginId(), sessionsModel.getActionByProduct()), DEFAULT_SESSION_EXPIRATION, TimeUnit.SECONDS);
 
-
         return sessionsModel;
     }
-
 
     public void removeSession(String actionByProduct, String loginId) throws Exception {
         SsoSessionsModel sessionsModel = (SsoSessionsModel) this.redisTemplate.opsForValue().get(sessionCacheKeyWithLoginId(loginId, actionByProduct));

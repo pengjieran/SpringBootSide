@@ -50,19 +50,20 @@ public class IdPasswordLoginAuthenticator implements LoginAuthenticatorHandler {
             throw new AuthException("登录信息不能为空.");
         }
 
-        Account loginInfoModel = this.loginInfoService.getByUsername(loginId);
+        Account account = this.loginInfoService.getByUsername(loginId);
 
-        if (Objects.isNull(loginInfoModel))
+        if (Objects.isNull(account))
             throw new AuthException("找不到用户信息.");
 
-        if (PropertyValueConstants.LOCK_STATUS_LOCK.equals(loginInfoModel.getStatus())) {
+        if (PropertyValueConstants.LOCK_STATUS_LOCK.equals(account.getStatus())) {
 
             throw new AuthException("当前账号已经禁用,请联系管理员");
-        } else if (Objects.isNull(loginInfoModel) || !loginInfoModel.getPassword().equals(SecureUtil.sha256(idPasswordAuthModel.getPassword()))) {
+        } else if (Objects.isNull(account) || !account.getPassword().equals(SecureUtil.sha256(idPasswordAuthModel.getPassword()))) {
 
+            logger.info("{},{}", account.getPassword(), SecureUtil.sha256(idPasswordAuthModel.getPassword()));
             throw new AuthException("用户名或密码有误");
         }
-        return loginInfoModel;
+        return account;
 
     }
 }
