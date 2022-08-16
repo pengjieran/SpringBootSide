@@ -30,8 +30,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.flowable</groupId>
-			<artifactId>flowable-spring-boot-starter-rest-api</artifactId>
-			<version>6.4.2</version>
+			<artifactId>flowable-spring-boot-starter-process-rest</artifactId>
+			<version>6.7.2</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -70,7 +70,7 @@
 		<repository>
 			<id>alimaven</id>
 			<name>aliyun maven</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<url>https://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
