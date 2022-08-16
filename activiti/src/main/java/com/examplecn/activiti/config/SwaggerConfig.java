@@ -2,6 +2,7 @@ package com.examplecn.activiti.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ConditionalOnExpression("${swagger.enable}")
+@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
 public class SwaggerConfig {
 	
 	@Value("${swagger.enable}")
