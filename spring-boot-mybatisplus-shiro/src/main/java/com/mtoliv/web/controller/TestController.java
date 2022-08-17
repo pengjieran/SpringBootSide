@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.mtoliv.entity.Account;
 import com.mtoliv.service.AccountService;
 
@@ -20,9 +19,7 @@ public class TestController {
 	
 	@GetMapping
 	public List<Account> get() {
-		
-		EntityWrapper<Account> accountWapper = new EntityWrapper<>();
-		
-		return accountService.selectList(accountWapper);
+
+		return accountService.list();
 	}
 }

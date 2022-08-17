@@ -1,8 +1,9 @@
 package com.mtoliv.entity;
 
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.io.Serializable;
 
 /**
@@ -18,6 +19,7 @@ public class RolePermission extends Model<RolePermission> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private Long id;
     @TableField("role_id")
     private Long roleId;
@@ -47,11 +49,6 @@ public class RolePermission extends Model<RolePermission> {
 
     public void setPermissionId(Long permissionId) {
         this.permissionId = permissionId;
-    }
-
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
     }
 
     @Override

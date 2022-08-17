@@ -1,7 +1,8 @@
 package com.mtoliv.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.io.Serializable;
 
 /**
@@ -17,6 +18,7 @@ public class Role extends Model<Role> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private Long id;
     /**
      * 角色
@@ -62,11 +64,6 @@ public class Role extends Model<Role> {
 
     public void setAvailable(Integer available) {
         this.available = available;
-    }
-
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
     }
 
     @Override

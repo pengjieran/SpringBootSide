@@ -1,9 +1,9 @@
 package com.mtoliv.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.mtoliv.entity.UserInfo;
 import com.mtoliv.mapper.dao.UserInfoMapper;
 import com.mtoliv.service.UserInfoService;
@@ -21,11 +21,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
 	@Override
 	public UserInfo findByUsername(String username) {
+
+		QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+		queryWrapper.eq("username", username);
 		
-		EntityWrapper<UserInfo> userInfoWrapper = new EntityWrapper<UserInfo>();
-		userInfoWrapper.addFilter("username={0}", username);
-		
-		return this.selectOne(userInfoWrapper);
+		return this.getOne(queryWrapper);
 	}
 
 }

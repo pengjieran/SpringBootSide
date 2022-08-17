@@ -1,8 +1,7 @@
 package com.mtoliv.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
  * <p>
@@ -13,10 +12,9 @@ import java.io.Serializable;
  * @since 2018-06-13
  */
 @TableName("t_account")
-public class Account extends Model<Account> {
+public class Account {
 
-    private static final long serialVersionUID = 1L;
-
+    @TableId
     private Long id;
     private String username;
     private String password;
@@ -46,10 +44,6 @@ public class Account extends Model<Account> {
         this.password = password;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
     @Override
     public String toString() {

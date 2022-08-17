@@ -4,23 +4,9 @@ import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.baomidou.mybatisplus.plugins.CachePaginationInterceptor;
-import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
-
 @Configuration
 public class MybatisConfig {
 
-	@Bean
-	public PaginationInterceptor paginationInterceptor() {
-		return new PaginationInterceptor();
-	}
-	
-	@Bean
-	public CachePaginationInterceptor cachePaginationInterceptor() {
-		
-		return new CachePaginationInterceptor();
-	}
-	
 	@Bean
 	public MapperScannerConfigurer mapperScannerConfigurer() {
 		

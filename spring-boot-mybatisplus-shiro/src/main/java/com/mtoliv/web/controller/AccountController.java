@@ -41,7 +41,7 @@ public class AccountController {
 	@ApiOperation(value = "新增账号")
 	public Account put(@RequestBody Account account) {
 		
-		accountService.insertOrUpdate(account);
+		accountService.saveOrUpdate(account);
 		System.out.println(account.getId());
 		return account;
 	}

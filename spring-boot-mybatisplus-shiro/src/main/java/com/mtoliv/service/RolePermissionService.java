@@ -1,7 +1,7 @@
 package com.mtoliv.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.mtoliv.entity.RolePermission;
-import com.baomidou.mybatisplus.service.IService;
 
 /**
  * <p>

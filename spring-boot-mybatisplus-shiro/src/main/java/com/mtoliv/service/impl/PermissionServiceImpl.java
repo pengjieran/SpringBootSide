@@ -1,9 +1,9 @@
 package com.mtoliv.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mtoliv.entity.Permission;
 import com.mtoliv.mapper.dao.PermissionMapper;
 import com.mtoliv.service.PermissionService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,7 +1,7 @@
 package com.mtoliv.mapper.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mtoliv.entity.Permission;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
  * <p>

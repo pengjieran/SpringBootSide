@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.mtoliv.entity.Token;
 import com.mtoliv.entity.UserInfo;
 import com.mtoliv.service.UserInfoService;
@@ -33,16 +32,15 @@ public class IndexController {
 	@GetMapping(value = "/accounts/list", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ApiOperation(value = "携带token请求账号信息")
 	public List<UserInfo> list() {
-		
-		EntityWrapper<UserInfo> userInfoEntity = new EntityWrapper<>();
-		return userInfoService.selectList(userInfoEntity);
+
+		return userInfoService.list();
 	}
 	
 	@PostMapping(value = "/sign", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ApiOperation(value = "用户注册")
 	public UserInfo sign(@RequestBody UserInfo userInfo) {
 		
-		userInfoService.insert(userInfo);
+		userInfoService.save(userInfo);
 		
 		return userInfo;
 	}
